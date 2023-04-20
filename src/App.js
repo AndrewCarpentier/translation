@@ -1,32 +1,11 @@
 import styles from './App.module.scss';
 import i18n from 'i18next';
 import { Suspense } from 'react';
-import {Trans, initReactI18next, useTranslation} from 'react-i18next';
+import {Trans, useTranslation} from 'react-i18next';
+import './i18n';
+import Homepage from './Homepage';
 
-const translationEn = {
-  welcome: "welcome",
-  sample: "Sample <bold><italics>text</italics></bold>"
-}
-const translationFr = {
-  welcome: "bienvenue",
-  sample: "Exemple de <bold><italics>texte</italics></bold>"
-}
 
-i18n
-.use(initReactI18next)
-.init({
-  resources : {
-    en: {
-      translation : translationEn
-    },
-    fr: {
-      translation : translationFr
-    },
-  },
-  lng: 'en',
-  fallbackLng: 'en',
-  interpolation: {escapeValue: false}
-})
 
 function App(){
   const {t} = useTranslation();
@@ -45,6 +24,8 @@ function App(){
             <option value="en">English</option>
             <option value="fr">French</option>
           </select>
+
+          <Homepage></Homepage>
       </div>
     </Suspense>
     
