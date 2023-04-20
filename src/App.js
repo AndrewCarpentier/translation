@@ -21,7 +21,7 @@ function App(){
           <h1>{t("welcome")}</h1>
           <Trans components={{bold: <strong/>, italics: <i/>}}>sample</Trans>
           <select name="language" onChange={onChange}>
-            <option value="en">English</option>
+            <option  value="en">English</option>
             <option value="fr">French</option>
           </select>
 
